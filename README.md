@@ -4,7 +4,7 @@
 
 Small Clojure-library for working with Git, supporting both Babashka and JVM Clojure.
 
-Provides data-driven access to Git commands by wrapping Git plumbing commands in [babashka/process](https://github.com/babashka/process).
+Provides data-driven access to Git commands by wrapping Git commands in [babashka/process](https://github.com/babashka/process).
 
 ## Requirements
 
