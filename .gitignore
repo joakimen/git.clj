@@ -1,3 +1,6 @@
 .portal
 .calva
 .clj-kondo
+
+.cpcache
+.lsp
