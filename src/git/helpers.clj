@@ -6,15 +6,13 @@
   "Returns true if current repo has a configured upstream, else false"
   [repo]
   (let [exit (:exit (p/sh {:dir repo} "git" "rev-parse" "--abbrev-ref" "@{upstream}"))]
-    (if (zero? exit)
-      true false)))
+    (zero? exit)))
 
 (defn repo?
   "Returns true if current directory is part of a git work tree, else false"
   [path]
   (let [exit (:exit (p/sh {:dir path} "git" "rev-parse" "--is-inside-work-tree"))]
-    (if (zero? exit)
-      true false)))
+    (zero? exit)))
 
 (defn repo-root
   "Returns the root directory of the current repository"
@@ -25,8 +23,7 @@
 
 (defn dirty? [repo]
   (let [exit (:exit (p/sh {:dir repo} "git" "diff-index" "--quiet" "HEAD" "--"))]
-    (if (= 1 exit)
-      true false)))
+    (= 1 exit)))
 
 (defn has-untracked?
   "Returns true if repo has untracked files, else false"
